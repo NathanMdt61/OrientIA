@@ -1,4 +1,4 @@
 class Suggestion < ApplicationRecord
-  belongs_to :job
+  has_many :job
   belongs_to :chat
 end
