@@ -2,6 +2,12 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
+Message.destroy_all
+Chat.destroy_all
+User.destroy_all
+Hobbie.destroy_all
+Job.destroy_all
+
 # Création de josselin
 
 josselin = User.create(user_name: "Josselin", email: "josselin@example.com", password: "password", age: 15, goal: "découvrir les métiers", school_level: "2nd")
