@@ -1,17 +1,6 @@
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-<<<<<<< HEAD
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
-
-Hobbies.create
-=======
 
 # Création de josselin
 
@@ -59,4 +48,3 @@ chat = Chat.create(title: "Exploration de carrières", user: josselin)
 
 Message.create(chat: chat, role: "user", content: "Bonjour ! Je veux découvrir des métiers qui me correspondent.")
 Message.create(chat: chat, role: "assistant", content: "Bonjour Josselin ! Quels sont tes centres d'intérêt ?")
->>>>>>> master
