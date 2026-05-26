@@ -1,0 +1,2 @@
+class Hobbie < ApplicationRecord
+end
