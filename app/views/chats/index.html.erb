@@ -1,0 +1,5 @@
+<h1 class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3 m-2">Mes conversations</h1>
+
+<% @chats.each do |chat| %>
+  <%= link_to "Chat ##{chat.id}", chat_path(chat) %>
+<% end %>
