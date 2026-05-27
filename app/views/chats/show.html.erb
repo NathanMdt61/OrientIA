@@ -1,7 +1,24 @@
 <h1 class="px-3 py-5 text-center">Bonjour <%= @chat.user.user_name %> !</h1>
+
+<div class="container">
+  <% @chat.messages.each do |message| %>
+    <% if message.role == "user" %>
+      <div class="mb-3 p-3 rounded bg-danger text-white text-end">
+        <strong>Toi</strong>
+        <p class="mb-0"><%= message.content %></p>
+      </div>
+    <% else %>
+      <div class="mb-3 p-3 rounded bg-light">
+        <strong>OrientIA</strong>
+        <p class="mb-0"><%= message.content %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="text-center">
-<%= simple_form_for([@chat, @message]) do |f| %>
-  <%= f.input :content, label: "Dis moi tout ?"%>
-  <%= f.button :submit, "Envoi ton message",  class: 'btn btn-danger p-3 m-3 border border-dark rounded-5 '%>
-<% end %>
+  <%= simple_form_for([@chat, @message]) do |f| %>
+    <%= f.input :content, label: "Dis moi tout ?" %>
+    <%= f.button :submit, "Envoi ton message", class: 'btn btn-danger p-3 m-3 border border-dark rounded-5' %>
+  <% end %>
 </div>
