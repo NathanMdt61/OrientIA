@@ -1,6 +1,7 @@
-<h1>Bonjour <%= @chat.user.user_name %> !</h1>
-
+<h1 class="px-3 py-5 text-center">Bonjour <%= @chat.user.user_name %> !</h1>
+<div class="text-center">
 <%= simple_form_for([@chat, @message]) do |f| %>
-  <%= f.input :content %>
-  <%= f.button :submit %>
+  <%= f.input :content, label: "Dis moi tout ?"%>
+  <%= f.button :submit, "Envoi ton message",  class: 'btn btn-danger p-3 m-3 border border-dark rounded-5 '%>
 <% end %>
+</div>
