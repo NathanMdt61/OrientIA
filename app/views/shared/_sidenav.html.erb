@@ -1,0 +1,8 @@
+<ul class="position-sticky sticky-top nav nav-pills flex-column">
+  <% chats.each do |chat| %>
+    <li class="nav-item">
+      <%= link_to chat.title, chat_path(chat),
+        class: class_names("nav-link", "active" => chat == current_chat, "text-dark" => chat != current_chat) %>
+    </li>
+  <% end %>
+</ul>

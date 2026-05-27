@@ -24,16 +24,28 @@
   </head>
 
 <body>
-  <%= link_to "Skip to main content", "#main-content", class: "visually-hidden-focusable" %>
-  <header>
-    <%= render "shared/navbar" %> <!-- 👈 Add this for navbar -->
-  </header>
+  <%= render "shared/navbar" %>
 
-  <main id="main-content">
-    <%= yield %>
-  </main>
-  <!-- app/views/layouts/application.html.erb -->
-  <!-- [...] -->
-  <%= render "shared/flashes" %>
+  <div class="container-fluid">
+    <% if content_for?(:sidenav) %>
+      <div class="row" data-controller="toggle">
+        <div class="mt-2 px-4">
+          <%= render "shared/sidenav_icons" %>
+        </div>
+
+        <nav class="col-md-2 pt-1" data-toggle-target="hideable">
+          <%= render "shared/sidenav", chats: @chats || [], current_chat: @chat %>
+        </nav>
+
+        <div class="col-md-10 px-4">
+          <%= render "shared/flashes" %>
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    <% end %>
+  </div>
 </body>
 </html>
