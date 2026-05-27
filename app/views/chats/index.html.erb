@@ -1,8 +1,12 @@
 <h1 class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3 m-2">Mes conversations</h1>
 
-<%= button_to "Nouveau chat", chats_path, method: :post, class: "btn btn-danger m-2" %>
 
-
+<%= button_to "Nouveau chat", chats_path, method: :post, class: "btn btn-success m-2" %>
 <% @chats.each do |chat| %>
-  <%= link_to chat.title = "Conversation numéro #{chat.id}", chat_path(chat), class: "btn btn-outline-secondary m-2" %>
+  <div class="d-flex align-items-center">
+    <%= link_to "Conversation numéro #{chat.id}", chat_path(chat), class: "btn btn-outline-secondary m-2" %>
+    <%= button_to chat_path(chat), method: :delete, class: "btn btn-dark m-2", data: { confirm: "Supprimer cette conversation ?" } do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </div>
 <% end %>
