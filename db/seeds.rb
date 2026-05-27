@@ -54,3 +54,17 @@ chat = Chat.create(title: "Exploration de carrières", user: josselin)
 
 Message.create(chat: chat, role: "user", content: "Bonjour ! Je veux découvrir des métiers qui me correspondent.")
 Message.create(chat: chat, role: "assistant", content: "Bonjour Josselin ! Quels sont tes centres d'intérêt ?")
+
+# Création de hoobies_list
+
+sport       = Hobbie.find_by(title: "sport")
+jeux_video  = Hobbie.find_by(title: "jeux vidéo")
+technologie = Hobbie.find_by(title: "technologie")
+musique     = Hobbie.find_by(title: "musique")
+dessin      = Hobbie.find_by(title: "dessin")
+
+HobbiesList.create(user: josselin, hobbie: sport)
+HobbiesList.create(user: josselin, hobbie: jeux_video)
+HobbiesList.create(user: josselin, hobbie: technologie)
+HobbiesList.create(user: josselin, hobbie: musique)
+HobbiesList.create(user: josselin, hobbie: dessin)
