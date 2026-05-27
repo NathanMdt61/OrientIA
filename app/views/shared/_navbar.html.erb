@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky-top">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
      <strong> OrientIA </strong>
@@ -12,11 +12,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-         
+
 
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://coloriages.ieducatif.fr/public/themes/dora.jpeg", class: "avatar", alt: "dropdown menu" %>
+            <%= image_tag "https://coloriages.ieducatif.fr/public/themes/dora.jpeg", class: "avatar border border-success", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
