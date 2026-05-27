@@ -20,4 +20,10 @@ class ChatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @chat = Chat.find(params[:id])
+    @chat.destroy
+    redirect_to chats_path
+  end
 end
