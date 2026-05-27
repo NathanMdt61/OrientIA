@@ -12,7 +12,7 @@
     <% else %>
       <div class="mb-3 p-3 rounded bg-light">
         <strong>OrientIA</strong>
-        <p class="mb-0"><%= message.content %></p>
+        <p class="mb-0"><%= raw(render_markdown(message.content)) %></p>
       </div>
     <% end %>
   <% end %>
