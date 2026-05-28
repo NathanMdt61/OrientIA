@@ -17,6 +17,9 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -26,10 +29,10 @@
 <body>
   <%= render "shared/navbar" %>
 
-  <div class="container-fluid">
+  <div class="container-fluid mt-5">
     <% if content_for?(:sidenav) %>
       <div class="row" data-controller="toggle">
-        <div class="mt-2 px-4">
+        <div class="mt-2 px-4 sidenav-sticky">
           <%= render "shared/sidenav_icons" %>
         </div>
 
@@ -37,7 +40,7 @@
           <%= render "shared/sidenav", chats: @chats || [], current_chat: @chat %>
         </nav>
 
-        <div class="col-md-10 px-4">
+        <div class="col px-4">
           <%= render "shared/flashes" %>
           <%= yield %>
         </div>

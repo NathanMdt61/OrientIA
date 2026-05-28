@@ -1,4 +1,4 @@
-<ul class="position-sticky sticky-top nav nav-pills flex-column">
+<ul class="position-sticky sidenav-sticky nav nav-pills flex-column">
   <% chats.each do |chat| %>
     <li class="nav-item">
       <%= link_to chat.messages.first&.content, chat_path(chat),

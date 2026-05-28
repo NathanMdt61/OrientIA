@@ -1,16 +1,27 @@
 
 <div class="text-center">
-<h1 class="p-3 text-primary-emphasis bg-warning-subtle border border-primary-subtle rounded-3 m-2">Mes conversations</h1>
+<h1 class="p-3 m-2">Mes conversations</h1>
 
-<%= button_to "Nouveau chat", chats_path, method: :post, class: "m-5 btn btn-success m-2" %>
+  <div class="container">
+    <div class="grid-perso">
+      <div class="grid-item">
+        <%= button_to chats_path, method: :post, class: "btn-add d-flex" do%>
+          Nouveau chat<img src="<%= image_path('plus-chat.png')%>" alt="">
+        <% end %>
+      </div>
+      <% @chats.each do |chat| %>
+        <div class="grid-item conv">
+          <%= link_to "#{chat.title}", chat_path(chat), class: "btn"%>
+          <p><% chat.messages.each do |m| %>
+            <%= m.content %>
+          <% end %></p>
 
+          <%= button_to chat_path(chat), method: :delete, class: "btn btn-dark", data: { confirm: "Supprimer cette conversation ?" } do %>
+            Supprimer <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      <% end %>
 
-<% @chats.each do |chat| %>
-  <div class="d-flex">
-    <%= link_to "Conversation numéro #{chat.id}", chat_path(chat), class: "btn btn-outline-secondary m-2" %>
-    <%= button_to chat_path(chat), method: :delete, class: "btn btn-dark m-2", data: { confirm: "Supprimer cette conversation ?" } do %>
-      <i class="fas fa-trash"></i>
-    <% end %>
+    </div>
   </div>
-<% end %>
 </div>
