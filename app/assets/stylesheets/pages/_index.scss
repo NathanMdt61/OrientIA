@@ -1,3 +1,80 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "sign_in";
+
+.grid-perso {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  gap: 24px;
+}
+
+.grid-item {
+  width: 100%;
+  height: 300px;
+  background-color: #FFF;
+  border-radius: 16px;
+  box-shadow: 0px 5px 6px 0px #9875b160;
+}
+
+.grid-item:first-child {
+  background-image: image-url('add-chat-bck.jpg');
+  background-size: cover;
+  box-shadow: none;
+}
+
+.conv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  text-align: left;
+}
+
+.conv button {
+  width: 100%;
+}
+
+.conv a {
+  font-family: 'Elms Sans';
+  font-weight: 700;
+  text-align: left;
+}
+
+.conv p {
+  padding: 0 12px;
+  margin-bottom: 4px;
+  font-family: 'Elms Sans';
+  overflow: hidden;
+}
+
+.conv p::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #8A38F5;
+}
+
+.btn-add {
+  width: 100%;
+  height: 100%;
+  background-color: #00000000;
+  border: none;
+  color: #8A38F5;
+
+  display: flex !important;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  img {
+    height: 60px;
+    width: 60px;
+    transition: height 0.3s ease, width 0.3s ease;
+  }
+
+  &:hover img {
+    height: 80px;
+    width: 80px;
+  }
+}
