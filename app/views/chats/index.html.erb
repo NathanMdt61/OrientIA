@@ -5,7 +5,7 @@
   <div class="container">
     <div class="grid-perso">
       <div class="grid-item">
-        <%= button_tag chats_path, method: :post, class: "btn-add d-flex" do%>
+        <%= button_to chats_path, method: :post, class: "btn-add d-flex" do%>
           Nouveau chat<img src="<%= image_path('plus-chat.png')%>" alt="">
         <% end %>
       </div>

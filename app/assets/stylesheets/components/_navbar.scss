@@ -29,3 +29,10 @@
   border-radius: 50%;
   border: 3px solid #0cda38;
 }
+
+
+.sidenav-sticky {
+  position: sticky;
+  top: 120px;
+  overflow-y: auto;
+}

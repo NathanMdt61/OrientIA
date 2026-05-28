@@ -32,7 +32,7 @@
   <div class="container-fluid mt-5">
     <% if content_for?(:sidenav) %>
       <div class="row" data-controller="toggle">
-        <div class="mt-2 px-4">
+        <div class="mt-2 px-4 sidenav-sticky">
           <%= render "shared/sidenav_icons" %>
         </div>
 
@@ -40,7 +40,7 @@
           <%= render "shared/sidenav", chats: @chats || [], current_chat: @chat %>
         </nav>
 
-        <div class="col-md-10 px-4">
+        <div class="col px-4">
           <%= render "shared/flashes" %>
           <%= yield %>
         </div>
