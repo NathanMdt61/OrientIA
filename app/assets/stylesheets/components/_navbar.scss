@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +8,31 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-perso {
+  padding: 12px 24px;
+  background-color: #B24DFF;
+  border-radius: 300px;
+  color: #FFFFFF;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  & .navbar-brand {
+    color: #FFFFFF;
+  }
+}
+
+.avatar-perso {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 3px solid #0cda38;
+}
+
+
+.sidenav-sticky {
+  position: sticky;
+  top: 120px;
+  overflow-y: auto;
 }
