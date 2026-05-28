@@ -1,0 +1,12 @@
+
+ <% if message.role == "user" %>
+      <div class="mb-3 p-3 rounded bg-danger text-white text-end">
+        <strong>Toi</strong>
+        <p class="mb-0"><%= message.content %></p>
+      </div>
+    <% else %>
+      <div class="mb-3 p-3 rounded bg-light">
+        <strong>OrientIA</strong>
+        <p class="mb-0"><%= raw(render_markdown(message.content)) %></p>
+      </div>
+    <% end %>

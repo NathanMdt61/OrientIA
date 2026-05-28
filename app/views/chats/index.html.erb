@@ -4,6 +4,7 @@
 
 <%= button_to "Nouveau chat", chats_path, method: :post, class: "m-5 btn btn-success m-2" %>
 
+
 <% @chats.each do |chat| %>
   <div class="d-flex">
     <%= link_to "Conversation numéro #{chat.id}", chat_path(chat), class: "btn btn-outline-secondary m-2" %>
