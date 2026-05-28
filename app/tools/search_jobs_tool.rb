@@ -3,9 +3,20 @@ require 'net/http'
 
 class SearchJobsTool < RubyLLM::Tool
   description "Trouver la fiche métier liée aux sugestions proposées par l'IA."
-  param :metier, desc: "Trouve la fiche métier liée au métier en question"
+  param :code_rome, desc: "Rôle : Tu es un expert du Répertoire Opérationnel des Métiers et des Emplois (ROME) de France Travail.
+Tâche : Pour le métier que je te donne, identifie le code ROME exact et officiel.
+Métier :
+[NOM DU MÉTIER]
+Règles impératives :
 
-  def execute(metier:)
+Le métier ne sera pas forcément écrit exactement comme dans la nomenclature officielle. Tiens compte des fautes d'orthographe, des abréviations, du masculin/féminin, du singulier/pluriel, des synonymes et des appellations courantes ou régionales. Identifie le métier ROME correspondant à l'intention, pas au libellé exact.
+Si l'appellation que je donne est un synonyme ou une variante, indique d'abord à quel intitulé ROME officiel tu la rattaches, puis donne le code.
+Donne le code ROME, son intitulé officiel exact, puis la fiche.
+Le code et l'intitulé doivent correspondre EXACTEMENT à la nomenclature officielle ROME v4. N'invente jamais un code.
+Si l'appellation est trop ambiguë pour trancher entre plusieurs métiers, liste les codes possibles avec leur intitulé et précise dans quel contexte chacun s'applique, au lieu de deviner.
+Avant de répondre, vérifie la cohérence entre le code et l'intitulé : un même code ne peut pas désigner deux métiers différents."
+
+  def execute(code_rome:)
 
     uri = URI('https://entreprise.francetravail.fr/connexion/oauth2/access_token?realm=%2Fpartenaire')
 
@@ -25,7 +36,7 @@ class SearchJobsTool < RubyLLM::Tool
 
     access_token = JSON.parse(token_response.body)['access_token']
 
-    url = URI("https://api.francetravail.io/partenaire/rome-fiches-metiers/v1/fiches-rome/fiche-metier/#{metier}")
+    url = URI("https://api.francetravail.io/partenaire/rome-fiches-metiers/v1/fiches-rome/fiche-metier/#{code_rome}")
 
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl = true
