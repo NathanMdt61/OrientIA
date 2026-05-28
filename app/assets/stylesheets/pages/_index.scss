@@ -3,7 +3,7 @@
 
 .grid-perso {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   gap: 24px;
 }
@@ -14,12 +14,50 @@
   background-color: #FFF;
   border-radius: 16px;
   box-shadow: 0px 5px 6px 0px #9875b160;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 0px 30px 50px -10px #c574ff90;
+  }
 }
 
 .grid-item:first-child {
   background-image: image-url('add-chat-bck.jpg');
   background-size: cover;
   box-shadow: none;
+
+  & form {
+    height: 100%;
+  }
+}
+
+.col-6 form, .col-6 .btn {
+  height: 100%;
+  border-radius: 6px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background-color: #c4a2f1;
+  color: #371563 !important;
+  border: none;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #e4d0ff;
+  }
+}
+
+.btn-chat {
+  padding: 8px;
+  background-color: #8A38F5;
+  border-radius: 6px;
+  color: #FFF;
+
+  &:hover{
+    background-color: #4a247c !important;
+    color: #FFF !important;
+  }
 }
 
 .conv {
@@ -34,24 +72,24 @@
   width: 100%;
 }
 
-.conv a {
+.conv h3 {
   font-family: 'Elms Sans';
   font-weight: 700;
   text-align: left;
+  font-size: 1.3rem;
 }
 
-.conv p {
-  padding: 0 12px;
+.conv .row p {
+  padding: 0 16px;
   margin-bottom: 4px;
   font-family: 'Elms Sans';
+  color: #85719f;
   overflow: hidden;
-}
-
-.conv p::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: #8A38F5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-add {
@@ -66,14 +104,15 @@
   justify-content: space-evenly;
   flex-direction: column;
 
-  img {
-    height: 60px;
-    width: 60px;
-    transition: height 0.3s ease, width 0.3s ease;
-  }
+}
 
-  &:hover img {
-    height: 80px;
-    width: 80px;
-  }
+img {
+  height: 60px;
+  width: 60px;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+
+.btn-add:hover img {
+  height: 80px;
+  width: 80px;
 }
