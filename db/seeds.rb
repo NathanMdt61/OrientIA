@@ -4,13 +4,14 @@
 
 Message.destroy_all
 Chat.destroy_all
+HobbiesList.destroy_all
 User.destroy_all
 Hobbie.destroy_all
 Job.destroy_all
 
 # Création de josselin
 
-josselin = User.create(user_name: "Josselin", email: " ", password: "password", age: 15, goal: "découvrir les métiers", school_level: "2nd")
+josselin = User.create(user_name: "Josselin", email: "josselin@gmail.com", password: "password", age: 15, goal: "découvrir les métiers", school_level: "2nd")
 
 # Création de hobbies
 
