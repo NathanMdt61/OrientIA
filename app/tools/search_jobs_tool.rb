@@ -50,7 +50,7 @@ Avant de répondre, vérifie la cohérence entre le code et l'intitulé : un mê
 
     response.body.force_encoding('UTF-8')
 
-  rescue => e # If the API fails, return an error the LLM can explain
+  rescue => e
     { error: e.message }
   end
 end
