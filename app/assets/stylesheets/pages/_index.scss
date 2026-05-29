@@ -1,4 +1,9 @@
 // Import page-specific CSS files here.
+
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 @import "home";
 
 .grid-perso {
@@ -15,6 +20,7 @@
   border-radius: 16px;
   box-shadow: 0px 5px 6px 0px #9875b160;
   transition: 0.5s;
+  font-family: "Elms Sans";
 
   &:hover {
     box-shadow: 0px 30px 50px -10px #c574ff90;
@@ -98,6 +104,8 @@
   background-color: #00000000;
   border: none;
   color: #8A38F5;
+  font-family: 'Elms Sans' !important;
+  font-size: 20px;
 
   display: flex !important;
   align-items: center;
