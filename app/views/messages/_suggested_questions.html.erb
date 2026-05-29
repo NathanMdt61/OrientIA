@@ -1,6 +1,6 @@
 <div data-controller="suggested-questions">
   <% suggested_questions.each do |question| %>
-    <button class="btn btn-outline-secondary btn-sm m-1 suggested-question-btn"
+    <button class="suggested-question-btn m-1"
             data-action="click->suggested-questions#fill">
       <%= question %>
     </button>
