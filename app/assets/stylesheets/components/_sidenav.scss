@@ -7,6 +7,14 @@
   transition: 0.6s;
 }
 
+.sidenav-col {
+  position: sticky;
+  top: 138px;
+  align-self: flex-start;
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+
 .sidenav-sticky-top a{
   background-color: #ffffff;
   border-radius: 8px 8px 0 0;
@@ -15,14 +23,16 @@
   font-size: 0.9rem;
   padding: 12px 20px;
   border-bottom: 1px solid #ebceff;
-  position: sticky !important;
-  top: 90px;
 
   &:hover {
     background-color: #ebceff;
   }
 }
 
+.sidenav-sticky-top {
+  position: sticky;
+  top: 90px;
+}
 
 .padpad .text-sidenav-icon-hidden {
   border-radius: 8px;
