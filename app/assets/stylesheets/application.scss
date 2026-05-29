@@ -9,4 +9,58 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/sidenav";
 @import "pages/index";
+
+
+.chat-title {
+  margin-top: -50px;
+}
+
+.m-user {
+  margin-left: auto;
+  background-color: #5e2787;
+  width: fit-content;
+  max-width: 80%;
+  border-radius: 20px 0 20px 20px;
+}
+
+.m-ia {
+  margin-right: auto;
+  background-color: #FFFFFF00 !important;
+  width: fit-content;
+  max-width: 80%;
+}
+
+.input-chat {
+    background-color: #5e2787;
+    box-shadow: 0px 1px 40px 0px #b24dff80;
+    border-radius: 12px;
+    height: 150px;
+    padding: 16px;
+    color: #FFF;
+
+    &::placeholder {
+      color: #ebb7ff;
+    }
+}
+
+.input-chat:focus {
+    background-color: #5e2787;
+    box-shadow: 0px 1px 40px 0px #b24dff80;
+    border-radius: 12px;
+    height: 150px;
+    color: #FFF;
+}
+
+#new_message {
+  position: relative;
+
+  & .btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #FFF;
+    padding: 12px 18px !important;
+  }
+}

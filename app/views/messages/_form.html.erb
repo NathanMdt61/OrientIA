@@ -1,4 +1,6 @@
  <%= simple_form_for([chat, message]) do |f| %>
-    <%= f.input :content, label: "Dis moi tout ?", as: :string %>
-    <%= f.button :submit, "Envoi ton message", class: 'btn btn-danger p-3 m-3 border border-dark rounded-5' %>
+    <%= f.input :content, input_html: { class: 'input-chat' }, placeholder: "Texte d'exemple" %>
+    <%= button_tag type: 'submit', class: 'btn p-3 m-3 border rounded-5' do %>
+      <i class="fa-solid fa-paper-plane"></i>
+    <% end %>
   <% end %>

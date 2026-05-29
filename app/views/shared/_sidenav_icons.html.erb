@@ -1,9 +1,9 @@
-<%= link_to "#", class: "nav-link text-dark",
+<%= link_to "#", class: "nav-link text-sidenav-icon",
             data: { action: "click->toggle#call", toggle_target: "icon" } do %>
-  <i class="fa-solid fa-circle-left"></i>
+  <i class="fa-solid fa-circle-left"></i> Réduire la sidebar
 <% end %>
 
-<%= link_to "#", class: "nav-link text-dark d-none ",
+<%= link_to "#", class: "nav-link text-sidenav-icon-hidden d-none ",
             data: { action: "click->toggle#call", toggle_target: "icon" } do %>
-  <i class="fa-solid fa-circle-right "></i>
+  <i class="fa-solid fa-circle-right "></i> Déployer la sidebar
 <% end %>

@@ -29,14 +29,16 @@
 <body>
   <%= render "shared/navbar" %>
 
-  <div class="container-fluid mt-5">
+  <div class="container mt-5">
     <% if content_for?(:sidenav) %>
       <div class="row" data-controller="toggle">
-        <div class="mt-2 px-4 sidenav-sticky">
-          <%= render "shared/sidenav_icons" %>
+        <div class="mt-2 sidenav-sticky-top">
+          <div class="col-md-3 padpad">
+            <%= render "shared/sidenav_icons" %>
+          </div>
         </div>
 
-        <nav class="col-md-2 pt-1" data-toggle-target="hideable">
+        <nav class="col-md-3" data-toggle-target="hideable">
           <%= render "shared/sidenav", chats: @chats || [], current_chat: @chat %>
         </nav>
 
