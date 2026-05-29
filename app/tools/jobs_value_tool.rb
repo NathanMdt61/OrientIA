@@ -2,7 +2,7 @@ require 'uri'
 require 'net/http'
 
 class JobsValueTool < RubyLLM::Tool
-  description "Rechercher des offres d'emploi via le code ROME pour obtenir des infos sur les salaires et types de contrats disponibles (CDI, CDD...)."
+  description "Rechercher des offres d'emploi via le code ROME pour obtenir des infos sur les salaires et types de contrats disponibles (CDI, CDD...), etc."
 
   param :code_rome, desc: "Le code ROME du métier (ex: 'G1204', 'K1302'). Récupéré depuis la fiche métier."
 
