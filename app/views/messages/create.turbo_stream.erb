@@ -4,6 +4,10 @@
   <%= render "messages/message", message: @assistant_message %>
 <% end %>
 
+<%= turbo_stream.update "suggested_questions" do %>
+  <%= render "messages/suggested_questions", suggested_questions: @suggested_questions %>
+<% end %>
+
 <%= turbo_stream.update "new_message_container" do %>
   <%= render "messages/form", chat: @chat, message: Message.new %>
 <% end %>
