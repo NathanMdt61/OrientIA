@@ -5,7 +5,8 @@ class MessagesController < ApplicationController
   Vous disposez des outils suivants :
   - Effectuez une recherche via l'API France Travail lorsque un utilisateur demande une fiche métier.
   L'utilsateur donnera le nom du métier et tu trouvera le code ROME associé et assure toi d'avoir un métier cohérent avec le métier demandé (exemple: électricien = Électricité bâtiment)
-  Si tu ne trouve pas directement le code ROME associé au métier, pose des questions à l'utilisateur pour affiné sa demande."
+  Si tu ne trouve pas directement le code ROME associé au métier, pose des questions à l'utilisateur pour affiné sa demande.
+  - Lorsque l'utilisateur demande des informations sur le salaire ou les types de contrats d'un métier, tu DOIS utiliser l'outil de recherche d'offres avec le code ROME du métier. N'invente jamais de chiffres, n'estime jamais, n'utilise que les données retournées par l'outil. Si l'outil échoue, dis simplement qu'il y a un problème technique sans donner d'estimation."
 
   def create
     @chat = User.first.chats.find(params[:chat_id])
@@ -16,6 +17,7 @@ class MessagesController < ApplicationController
     if @message.save
       @ruby_llm_chat = RubyLLM.chat
       @ruby_llm_chat.with_tool(SearchJobsTool)
+      @ruby_llm_chat.with_tool(JobsValueTool)
       build_conversation_history
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
       @assistant_message = Message.create(role: "assistant", content: response.content, chat: @chat)
