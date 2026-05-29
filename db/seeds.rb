@@ -10,7 +10,7 @@ Job.destroy_all
 
 # Création de josselin
 
-josselin = User.create(user_name: "Josselin", email: "josselin@example.com", password: "password", age: 15, goal: "découvrir les métiers", school_level: "2nd")
+josselin = User.create(user_name: "Josselin", email: " ", password: "password", age: 15, goal: "découvrir les métiers", school_level: "2nd")
 
 # Création de hobbies
 
