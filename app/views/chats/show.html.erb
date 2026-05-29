@@ -1,6 +1,6 @@
 <%= content_for :sidenav, true %>
 <div class="container-fluid grid">
-<h1 class="px-3 py-5 text-center">Bonjour <%= @chat.user.user_name %> !</h1>
+<h1 class="px-3 pb-5 chat-title text-center">Bonjour <%= @chat.user.user_name %> !</h1>
 
 <div class="container" id="messages">
   <% @chat.messages.each do |message| %>

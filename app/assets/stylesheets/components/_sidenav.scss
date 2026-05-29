@@ -1,0 +1,55 @@
+.text-sidenav-icon{
+  color: #000;
+  font-family: 'Elms Sans';
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  transition: 0.6s;
+}
+
+.sidenav-sticky-top a{
+  background-color: #ffffff;
+  border-radius: 8px 8px 0 0;
+  border: 2px solid #eaceff;
+  border-bottom: 0;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-bottom: 1px solid #ebceff;
+  position: sticky !important;
+  top: 90px;
+
+  &:hover {
+    background-color: #ebceff;
+  }
+}
+
+
+.padpad .text-sidenav-icon-hidden {
+  border-radius: 8px;
+  border-bottom: 2px solid #ebceff;
+}
+
+.sidenav-sticky {
+    background-color: #ffffff;
+    border-radius: 0 0 8px 8px;
+    border: 2px solid #eaceff;
+    border-top: 0;
+    font-size: 0.9rem;
+
+  & li:hover {
+    background-color: #ebceff;
+  }
+}
+
+.sidenav-sticky li{
+  border-bottom: 1px solid #ebceff;
+  padding: 6px;
+
+  & .active {
+    background-color: #b24dff !important;
+  }
+}
+
+.padpad {
+  padding-right: 18px !important;
+}
