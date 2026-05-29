@@ -16,12 +16,16 @@ class MessagesController < ApplicationController
 
     if @message.save
       @ruby_llm_chat = RubyLLM.chat
-      @ruby_llm_chat.with_tool(SearchJobsTool)
-      @ruby_llm_chat.with_tool(JobsValueTool)
+      # @ruby_llm_chat.with_tool(SearchJobsTool)
+      # @ruby_llm_chat.with_tool(JobsValueTool)
       build_conversation_history
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
       @assistant_message = Message.create(role: "assistant", content: response.content, chat: @chat)
       @chat.generate_title_from_first_message
+      assistant_response = response.content
+      questions_prompt = "Voici la réponse que tu viens de donner à un jeune en orientation :\n\n#{assistant_response}\n\nGénère exactement 3 questions courtes que ce jeune pourrait te poser pour en savoir plus. Réponds uniquement avec un tableau de type array valide, sans texte autour. Exemple : [\"Question 1 ?\", \"Question 2 ?\", \"Question 3 ?\"]"
+      questions_response = RubyLLM.chat.ask(questions_prompt)
+      @suggested_questions = JSON.parse(questions_response.content)
 
       respond_to do |format|
         format.turbo_stream
