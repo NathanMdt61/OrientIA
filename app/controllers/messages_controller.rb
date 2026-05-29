@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
       build_conversation_history
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
       @assistant_message = Message.create(role: "assistant", content: response.content, chat: @chat)
+      # Deuxième appel pour avoir un array de 3 questions
 
       respond_to do |format|
         format.turbo_stream
