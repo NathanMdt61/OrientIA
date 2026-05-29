@@ -1,5 +1,5 @@
  <%= simple_form_for([chat, message]) do |f| %>
-    <%= f.input :content, input_html: { class: 'input-chat' }, placeholder: "Texte d'exemple" %>
+    <%= f.input :content, as: :string, input_html: { class: 'input-chat' }, placeholder: "Texte d'exemple" %>
     <%= button_tag type: 'submit', class: 'btn p-3 m-3 border rounded-5' do %>
       <i class="fa-solid fa-paper-plane"></i>
     <% end %>
