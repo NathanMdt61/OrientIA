@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  SYSTEM_PROMPT = "Tu es un conseiller d'orientation expert, Je suis un utilisateur qui a besoin d'aide pour trouver un
+  SYSTEM_PROMPT = "Tu es un conseiller d'orientation expert, Je suis un jeune qui a besoin d'aide pour trouver un
   métier et les études rattachées par rapport à mes hobbies, passions, études précédentes âge ect, fais des propositions
   que le texte soit aéré, fais des listes pour chaque proposition"
 
@@ -36,7 +36,7 @@ class MessagesController < ApplicationController
 
   def user_profil
     j = User.first
-    "Nom: #{j.user_name}, Âge: #{j.age} ans, Niveau scolaire: #{j.school_level}, Objectif: #{j.goal}"
+    "Nom: #{j.user_name}, Âge: #{j.age} ans, Niveau scolaire: #{j.school_level}, Objectif: #{j.goal}" # Ajouter les hobbies
   end
 
   def message_params
