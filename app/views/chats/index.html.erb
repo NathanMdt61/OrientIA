@@ -14,7 +14,7 @@
           <div class="row">
             <h3 class="p-3"><%= chat.title %></h3>
             <p><% chat.messages.each do |m| %>
-              <%= m.content %>
+              <%= m.content.split.first(10).join(" ")%>
               <% end %></p>
           </div>
             <div class="row px-2">
